@@ -6,8 +6,38 @@
   <title>Landing Info</title>
   <link rel="icon" href="../res/icons/icon.ico" type="image/ico">
   <link rel="stylesheet" href="../res/styles/style.css">
+  <link rel="stylesheet" href="../res/styles/style2.css">
 </head>
-<body>
+<body class="body">
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../"><img src="../res/images/logo.png" alt="Logo Aerolínea"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../who">¿Quiénes somos?</a></li>
+        <li><a href="../join">Únete a Nosotros</a></li>
+        <li><a href="../landing-rate-tool/">Landing Rate Tool</a></li>
+        <li><a href="../fleet">Nuestra Flota</a></li>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="../who">¿Quiénes somos?</a>
+      <a href="../join">Únete a Nosotros</a>
+      <a href="../landing-rate-tool/">Landing Rate Tool</a>
+      <a href="../fleet">Nuestra Flota</a>
+      <a href="#liveries">Descargar Liveries</a>
+      <a href="../flight-summary/">Resumen Vuelo Mensaje</a>
+      <!--<a href="#operaciones">Página de Operaciones</a>-->
+    </div>
+  </header>
   <div id="input-screen">
     <form id="landing-form">
       <label for="vspeed">Introduce Vertical Speed (Recuerde el signo negativo):</label>
@@ -28,5 +58,6 @@
   </div>
 
   <script src="../res/scripts/script.js"></script>
+  <script src="../res/scripts/script2.js"></script>
 </body>
 </html>

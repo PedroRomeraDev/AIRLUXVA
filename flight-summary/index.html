@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../res/icons/icon.ico" type="image/ico">
+    <link rel="stylesheet" href="../res/styles/style3.css">
+    <link rel="stylesheet" href="../res/styles/style.css">
+    <title>Resumen de Vuelos</title>
+</head>
+<body class="body-summary">
+    <header class="header">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="../"><img src="../res/images/logo.png" alt="Logo Aerolínea"></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="../who">¿Quiénes somos?</a></li>
+            <li><a href="../join">Únete a Nosotros</a></li>
+            <li><a href="../landing-rate-tool/">Landing Rate Tool</a></li>
+            <li><a href="../fleet">Nuestra Flota</a></li>
+            <li>
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="../who">¿Quiénes somos?</a>
+          <a href="../join">Únete a Nosotros</a>
+          <a href="../landing-rate-tool/">Landing Rate Tool</a>
+          <a href="../fleet">Nuestra Flota</a>
+          <a href="../liveries">Descargar Liveries</a>
+          <a href="../flight-summary/">Resumen Vuelo Mensaje</a>
+          <!--<a href="#operaciones">Página de Operaciones</a>-->
+        </div>
+      </header>
+      <div id="input-screen">
+        <br><br><br><br><br>
+        <form id="fields">
+            <label for="departure">SALIDA (ICAO):</label>
+            <input type="text" id="input-departure" name="input-departure" required/><br>
+            <label for="arrival">LLEGADA (ICAO):</label>
+            <input type="text" id="input-arrival" name="input-arrival" required/><br>
+            <label for="stand">ESTACIONAMIENTO DE LLEGADA:</label>
+            <input type="text" id="input-stand" name="input-stand" required/><br>
+    
+            <label for="passengers">PASAJEROS:</label>
+            <input type="number" id="input-passenger" name="input-passenger" step="1" required/><br>
+            <label for="landing-rate">LANDING RATE:</label>
+            <input type="number" id="input-lr" name="input-lr" step="0.01" max="-1" required/><br>
+            <label for="postflight-fuel">COMBUSTIBLE RESTANTE TRAS EL VUELO:</label>
+            <input type="number" id="input-postflight-fob" name="input-postflight-fob" step="1" required/><br>
+    
+            <label for="previous-fuel">COMBUSTIBLE ANTES DE RELLENAR:</label>
+            <input type="number" id="input-previous-fob" name="input-previous-fob" step="1" required/><br>
+            <label for="total-flight-fuel">COMBUSTIBLE TOTAL DEL VUELO:</label>
+            <input type="number" id="input-total-flight-fuel" name="input-total-flight-fuel" step="1" required/><br>
+    
+            <button type="submit">GENERAR MENSAJE DE RESUMEN DE VUELO</button>
+        </form>
+      </div>
+    
+      <div id="result-screen-summary" class="hidden">
+        <div class="panel-summary">
+            <p id="result">Vuelo <span id="departure">XXXX</span> &#45;&#45;&#45;&#45;&#45; <span id="arrival">XXXX</span> (Estacionado en estacionamiento <span id="stand">X</span>)<br><br>
+
+                POB: &#95;&#95;&#42;&#42;<span id="pob">XXX</span> PASAJEROS&#42;&#42;&#95;&#95;<br>
+                LR: &#95;&#95;&#42;&#42;<span id="lr">XXX</span>FPM&#42;&#42;&#95;&#95;<br>
+                FOB RESTANTE: &#95;&#95;&#42;&#42;<span id="postflight-fob">XXXX</span>Kg&#42;&#42;&#95;&#95; (Tenedlo en cuenta para el siguiente vuelo)<br><br>
+                
+                Desglose de gastos:<br><br>
+                
+                &#45;&#45;&#62; FOB ANTES DE RELLENAR: <span id="previous-fob">XXXX</span>Kg &#45;&#45;&#45;&#45;&#45;&#45; 0&#8364;<br>
+                &#45;&#45;&#62; Combustible a&ntilde;adido: <span id="added-fuel">XXXX</span>Kg (<span id="fob">XXXX</span>Kg en dep&oacute;sito en total) &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; 0,53&#8364;/kg &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &#45;<span id="fuel-euro">XXXX,X</span>&#8364;<br>
+                &#45;&#45;&#62; Ingresos en pasajeros: <span id="passenger">XXX</span> pasajeros &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; 50&#8364;/pasajero &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &#43;<span id="passenger-euro">XXXX,X</span>&#8364;<br>
+                &#45;&#45;&#62; Beneficios: &#43;<span id="benefits">XXXX</span>&#8364; &#45; <span id="loses">XXXX</span>&#8364; &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; <span id="total-benefits">XXXX,X</span>&#8364;<br>
+                &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-&#45;&#45;&#45;&#45;<br>
+                TOTAL: <span id="total-benefit">XXXX,X</span> &#42; 15 = &#95;&#95;&#42;&#42;<span id="total">XXXXXX</span>&#8364;&#42;&#42;&#95;&#95;<br><br>
+                
+                &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#62; <span id="neccesary"></span></p>
+        </div>
+      </div>
+    <script src="../res/scripts/script3.js"></script>
+    <script src="../res/scripts/script2.js"></script>
+</body>
+</html>
