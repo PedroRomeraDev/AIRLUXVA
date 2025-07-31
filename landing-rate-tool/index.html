@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Info</title>
+  <link rel="icon" href="../res/icons/icon.ico" type="image/ico">
+  <link rel="stylesheet" href="../res/styles/style.css">
+</head>
+<body>
+  <div id="input-screen">
+    <form id="landing-form">
+      <label for="vspeed">Introduce Vertical Speed (Recuerde el signo negativo):</label>
+      <input type="number" id="vspeed" name="vspeed" step="0.01" required><br/>
+      <label for="g">Intruduce las G del aterrizaje (Opcional):</label>
+      <input type="number" id="g" name="g" step="0.01"><br/>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div id="result-screen" class="hidden">
+    <div class="panel">
+      <p class="line1">Vertical Speed: <span id="vspeed-value"></span>FPM / <span id="gv"></span>G</p>
+      <p class="line2">AIRLUX LANDING RATE TOOL</p>
+      <p class="line3">Nose: &quest; <i>deg/sec</i> | Float: &quest; secs</p>
+      <p class="butter" id="butter-text"></p>
+    </div>
+  </div>
+
+  <script src="../res/scripts/script.js"></script>
+</body>
+</html>

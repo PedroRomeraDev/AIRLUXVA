@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #002244;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #66ccff;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 25px;
+  background-color: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #003366;
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  width: 250px;
+  z-index: 999;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-menu a {
+  color: white;
+  padding: 1rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.mobile-menu a:hover {
+  background-color: #004080;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+main {
+  padding-top: 100px;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social {
+  text-align: center;
+  margin-top: 3rem;
+  animation: slideUp 1.5s ease-out;
+}
+
+.discord-button {
+  background-color: #5865F2;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.discord-button:hover {
+  background-color: #4752c4;
+}
+
+.redes img {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.redes img:hover {
+  transform: scale(1.1);
+}
