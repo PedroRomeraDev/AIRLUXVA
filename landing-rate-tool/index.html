@@ -41,9 +41,9 @@
   <div id="input-screen">
     <form id="landing-form">
       <label for="vspeed">Introduce Vertical Speed (Recuerde el signo negativo):</label>
-      <input type="number" id="vspeed" name="vspeed" step="0.01" required><br/>
+      <input type="number" id="vspeed" name="vspeed" step="0.01" max="-1" required><br/>
       <label for="g">Intruduce las G del aterrizaje (Opcional):</label>
-      <input type="number" id="g" name="g" step="0.01"><br/>
+      <input type="number" id="g" name="g" step="0.01" min="0"><br/>
       <button type="submit">Enviar</button>
     </form>
   </div>
