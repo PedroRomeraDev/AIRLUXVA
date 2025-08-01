@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const stand = document.getElementById('input-stand').value;
 
         const passenger = parseInt(document.getElementById('input-passenger').value);
+        const passengerPrice = parseInt(document.getElementById('input-passenger-price').value);
         const lr = parseFloat(document.getElementById('input-lr').value);
         const postflightFob = parseInt(document.getElementById('input-postflight-fob').value);
         const previousFob = parseInt(document.getElementById('input-previous-fob').value);
@@ -52,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const fuelEuro = (addedFuel * 0.53).toFixed(1);
         fuelEuroSpan.textContent = fuelEuro;
 
-        const passengerEuro = (passenger * 50).toFixed(1);
+        const passengerEuro = (passenger * passengerPrice).toFixed(1);
         passengerEuroSpan.textContent = passengerEuro;
 
-        const benefits = passenger * 50;
+        const benefits = passenger * passengerPrice;
         const loses = addedFuel * 0.53;
         const totalBenefits = benefits - loses;
 
