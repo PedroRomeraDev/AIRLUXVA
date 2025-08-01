@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalFuelSpan = document.getElementById('fob');
     const fuelEuroSpan = document.getElementById('fuel-euro');
     const passengerSpan = document.getElementById('passenger');
+    const passengerPriceSpan = document.getElementById('passenger-price-span');
     const passengerEuroSpan = document.getElementById('passenger-euro');
     const benefitsSpan = document.getElementById('benefits');
     const losesSpan = document.getElementById('loses');
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalBenefits = benefits - loses;
 
         passengerSpan.textContent = passenger;
+        passengerPriceSpan.textContent = passengerPrice;
         benefitsSpan.textContent = benefits.toFixed(1);
         losesSpan.textContent = loses.toFixed(1);
         totalBenefitsSpan.textContent = totalBenefits.toFixed(1);
